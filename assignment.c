@@ -48,8 +48,16 @@ int main(int argc, char *argv[]) {
     //write matrix in file
     for (int i = 0; i < num1; i++) {
         for (int j = 0; j < num2; j++) {
-            fprintf(fp, "%d", matrix[i][j]);
+            //space after each collumn except the last
+            if (j != num2 -1){
+                fprintf(fp, "%d ", matrix[i][j]);
+            }
+            else {
+                fprintf(fp, "%d", matrix[i][j]); 
+            }
+            
         }
+        // new row for every row except the last
         if (i != num1 -1) {
             fprintf(fp, "\n");
         }
